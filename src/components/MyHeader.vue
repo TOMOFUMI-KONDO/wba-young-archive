@@ -10,7 +10,6 @@
 
 <script>
   export default {
-    name: "header",
     methods: {
       toHome() {
         this.$router.push('/')

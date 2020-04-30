@@ -1,6 +1,6 @@
 <template>
-  <div class="home px-3 px-sm-5">
-    <p class="text-center">このサイトは、「<strong>全脳アーキテクチャ若手の会</strong>>」過去の資料をまとめたものです。</p>
+  <div class="home mx-3 mx-lg-5">
+    <p class="text-center">このサイトは、「<strong>全脳アーキテクチャ若手の会</strong>」過去の資料をまとめたものです。</p>
     <Index />
     <Documents />
   </div>

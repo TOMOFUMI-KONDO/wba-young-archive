@@ -8,7 +8,6 @@
   import moment from 'moment'
 
   export default {
-    name: "myFooter",
     data() {
       return {
         date: moment().format('YYYY')
