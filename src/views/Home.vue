@@ -1,7 +1,7 @@
 <template>
   <div class="home mx-3 mx-lg-5">
     <p class="text-center">このサイトは、「<strong>全脳アーキテクチャ若手の会</strong>」過去の資料をまとめたものです。</p>
-    <Index />
+    <Index :sheet_data="sheet_data"/>
     <Documents :sheet_data="sheet_data"/>
   </div>
 </template>
@@ -15,11 +15,11 @@
     name: "home",
     components: {
       Index,
-      Documents
+      Documents,
     },
     data() {
       return {
-        sheet_data: []
+        sheet_data: [],
       }
     },
     mounted () {
