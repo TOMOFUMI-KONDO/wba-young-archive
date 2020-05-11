@@ -1,9 +1,9 @@
 <template>
   <div class="index px-sm-5">
     <h2 class="font-weight-bold border-bottom border-dark">目次</h2>
-    <input type="text" v-model="searchWord" placeholder="キーワード検索">
+    <input type="text" v-model="searchWord" placeholder="キーワード検索"><p>イベント名、または開催年で検索できます</p>
     <div v-for="document in filteredTitles" :key="document.sheet">
-    <li><a :href="'#'+document">{{document}}</a></li>
+    <ul><li><a :href="'#'+document">{{document}}</a></li></ul>
     </div>
   </div>
 </template>
@@ -22,7 +22,9 @@
       var filtered_sheet = [];
       for(var i in this.sheet_data) {
         var title = this.sheet_data[i][0];
-        if(title.indexOf(this.searchWord)!==-1){
+        var date = this.sheet_data[i][1]
+        if(title.indexOf(this.searchWord)!==-1 ||
+           date.indexOf(this.searchWord) !== -1) {
           filtered_sheet.push(title);
         }
       }
