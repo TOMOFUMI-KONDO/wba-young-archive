@@ -27,7 +27,10 @@
 
           if(iframe.getAttribute('src') === dataSrc) return 0 //既に読み込んでいたら処理を終了
 
-          if(window.parent.screen.height - 300 > iframe.getBoundingClientRect().top) { //iframe要素が画面内に入った時
+          let window_height = window.parent.screen.height
+          let iframe_height = iframe.getBoundingClientRect()
+
+          if(window_height + 300 > iframe_height.top && -300 < iframe_height.bottom) { //iframe要素が画面内に入った時に遅延読み込みを実行
             iframe.classList.add('loading')
 
             iframe.setAttribute('src', dataSrc)

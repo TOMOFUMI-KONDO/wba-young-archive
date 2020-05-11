@@ -1,5 +1,5 @@
 <template>
-  <div class="index px-sm-5">
+  <div class="index mx-3 mx-lg-5">
     <h2 class="font-weight-bold border-bottom border-dark">目次</h2>
     <input type="text" v-model="searchWord" placeholder="キーワード検索">
     <div v-for="document in filteredTitles" :key="document.sheet">
