@@ -1,9 +1,12 @@
 <template>
   <div class="index mx-3 mx-lg-5">
     <h2 class="font-weight-bold border-bottom border-dark">目次</h2>
-    <input type="text" v-model="searchWord" placeholder="キーワード検索"><p>イベント名、または開催年で検索できます</p>
-    <div v-for="document in filteredTitles" :key="document.sheet">
+    <input type="text" v-model="searchWord" placeholder="キーワード検索">
+    <p>イベント名、または開催年で検索できます</p>
+    <div class="row">
+    <div class="col-xs-12 col-md-6" v-for="document in filteredTitles" :key="document.sheet">
     <ul><li><a :href="'#'+document">{{document}}</a></li></ul>
+    </div>
     </div>
   </div>
 </template>
@@ -36,5 +39,19 @@
 </script>
 
 <style scoped>
+ul, ol {
+  padding: 0;
+  position: relative;
+}
 
+ul li, ol li {
+  color: #2d8fdd;
+  border-left: solid 6px #3A66D6;
+  background: #f1f8ff;
+  margin-bottom: 3px;
+  margin-right: 3px;
+   line-height: 1.5;
+  padding: 0.5em;
+  list-style-type: none!important;
+}
 </style>
