@@ -1,5 +1,5 @@
 <template>
-  <header class="text-center pt-5">
+  <header id="header" class="text-center pt-5">
     <div>
       <h1>
         <img @click="toHome()" src="../assets/logo.png" alt="WBA" />

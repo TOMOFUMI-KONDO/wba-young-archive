@@ -3,6 +3,7 @@
     <p class="text-center">このサイトは、「<strong>全脳アーキテクチャ若手の会</strong>」過去の資料をまとめたものです。</p>
     <Index :sheet_data="sheet_data"/>
     <Documents :sheet_data="sheet_data"/>
+    <button v-scroll-to="'#header'" class="to_top"><font-awesome-icon icon="arrow-up" /></button>
   </div>
 </template>
 
@@ -64,5 +65,24 @@
 <style scoped>
   .home {
     min-height: 100%;
+  }
+
+  .to_top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50% 50%;
+    background-color: #3A66D6;
+    color: #fafafa;
+    box-shadow: 2px 2px 3px #999;
+    outline: none;
+    font-size: 20px;
+  }
+
+  .to_top:hover {
+    opacity: 0.7;
   }
 </style>
