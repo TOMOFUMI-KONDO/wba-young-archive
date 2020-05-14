@@ -25,10 +25,16 @@
       var filtered_sheet = [];
       for(var i in this.sheet_data) {
         var title = this.sheet_data[i][0];
-        var date = this.sheet_data[i][1]
-        if(title.indexOf(this.searchWord)!==-1 ||
-           date.indexOf(this.searchWord) !== -1) {
-          filtered_sheet.push(title);
+        var date = this.sheet_data[i][1];
+        if(title.indexOf(this.searchWord)!== -1 ||
+          date.indexOf(this.searchWord) !== -1 ) {
+          filtered_sheet.push(title); 
+        }
+        for(var j in this.sheet_data[i][4]) {
+          var tag = this.sheet_data[i][4][j]
+          if(tag.indexOf(this.searchWord) !== -1) {
+          filtered_sheet.push(title); 
+          }
         }
       }
       console.log(filtered_sheet)
@@ -53,5 +59,17 @@ ul li, ol li {
    line-height: 1.5;
   padding: 0.5em;
   list-style-type: none!important;
+}
+
+.v-enter {
+  opacity: 0;
+}
+
+.v-enter-to {
+  opacity: 1;
+}
+
+.v-enter-active {
+  transition: all 500ms;
 }
 </style>
