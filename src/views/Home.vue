@@ -1,10 +1,6 @@
 <template>
   <div class="home mx-3 mx-lg-5">
-    <p class="text-center">
-      このサイトは、「<strong>全脳アーキテクチャ若手の会</strong>」過去の資料をまとめたものです。
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7RTAV-68YYm9TF8Vj5iFNFAa3oiAoNMzgw3dkQVXfP-wGcg/viewform">資料の追加はこちら</a>
-    </p>
-
+    <p class="text-center">このサイトは、「<strong>全脳アーキテクチャ若手の会</strong>」過去の資料をまとめたものです。</p>
     <Index :sheet_data="sheet_data"/>
     <Documents :sheet_data="sheet_data"/>
     <button v-scroll-to="'#header'" class="to_top"><font-awesome-icon icon="arrow-up" /></button>
