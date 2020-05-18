@@ -2,6 +2,25 @@
   <div class="home mx-3 mx-lg-5">
     <p class="text-center">このサイトは、「<strong>全脳アーキテクチャ若手の会</strong>」過去の資料をまとめたものです。</p>
     <Index :sheet_data="sheet_data"/>
+    <div class="img" v-if="!finish_loading">
+      <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->
+      <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+        <g fill="none" fill-rule="evenodd">
+          <g transform="translate(1 1)" stroke-width="2">
+            <circle stroke-opacity=".5" cx="18" cy="18" r="18"/>
+            <path d="M36 18c0-9.94-8.06-18-18-18">
+              <animateTransform
+                  attributeName="transform"
+                  type="rotate"
+                  from="0 18 18"
+                  to="360 18 18"
+                  dur="1s"
+                  repeatCount="indefinite"/>
+            </path>
+          </g>
+        </g>
+      </svg>
+    </div>
     <Documents :sheet_data="sheet_data"/>
     <button v-scroll-to="'#header'" class="to_top"><font-awesome-icon icon="arrow-up" /></button>
   </div>
@@ -20,8 +39,8 @@
     },
     data() {
       return {
-        sheet_data: [],
-        if_scrolling: false, //スクロールボタンによる画面スクロールが行われているかどうか
+        sheet_data: [], //google sheetのデータ
+        finish_loading: false, // データ読み込みが終わったかどうか
       }
     },
     mounted () {
@@ -82,6 +101,7 @@
             })
 
             self.sheet_data = new_data
+            self.finish_loading = true
           })
     }
   }
@@ -90,6 +110,19 @@
 <style scoped>
   .home {
     min-height: 100%;
+  }
+
+  .home > .img {
+    margin: 50px 0;
+    text-align: center;
+  }
+
+  .home > .img > svg {
+    min-width: 38px;
+    min-height: 38px;
+    width: 5%;
+    height: 5%;
+    stroke: #2d8fdd;
   }
 
   .to_top {
