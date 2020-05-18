@@ -5,7 +5,7 @@
       <h3 class="mb-0 font-weight-bold">{{document[0]}}</h3>
       <p class="mb-1">{{document[1]}}</p>
       <div class="d-flex flex-wrap justify-content-around align-items-center">
-        <Iframe :source="source" v-for="(source, index) in document[3]" :key="index" />
+        <Iframe :source="source" v-for="(source, index) in document[3]" :key="index"/>
       </div>
     </div>
   </div>

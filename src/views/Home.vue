@@ -21,6 +21,7 @@
     data() {
       return {
         sheet_data: [],
+        if_scrolling: false, //スクロールボタンによる画面スクロールが行われているかどうか
       }
     },
     mounted () {
@@ -79,8 +80,6 @@
             new_data.sort(function (a,b) { //日付で降順に並び替え（新しいものが前）
               return a[1] < b[1] ? 1 : -1
             })
-
-            console.log(new_data)
 
             self.sheet_data = new_data
           })

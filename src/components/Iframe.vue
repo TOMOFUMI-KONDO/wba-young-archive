@@ -53,9 +53,17 @@
     mounted() {
       this.content = this.makeContent(this.source)
       this.loadLazily() //ページ読み込み時にで画面内にある要素を表示する
+
+      let timeoutId
+      let self = this
       window.onscroll = function (e) { //スクロールを検知して、loadLazilyを発動
         e.preventDefault()
-        this.loadLazily()
+
+        //スクロールが止まってから読み込む
+        clearTimeout(timeoutId)
+        timeoutId = setTimeout(function () {
+          self.loadLazily()
+        }, 100)
       }.bind(this)
     },
   }
