@@ -21,7 +21,6 @@ Vue.use(VueRouter)
 ]
 
 const index = new VueRouter({
-  mode: 'history',
   routes
 })
 
